@@ -1,3 +1,4 @@
+import json 
 import requests
 """r = requests.get('https://pipedream.com/sources/dc_nvukKPR')"""
 
@@ -51,5 +52,4 @@ files = {'file': ('Agatha.jpg', open('Agatha.jpg','rb'), 'image/jpeg')}
 r = requests.post('https://2a1f838fd36198aa414b5963af8abbf2.m.pipedream.net/', files=files)
 print(r)
 '''
-
 
