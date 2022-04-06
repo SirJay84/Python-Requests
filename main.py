@@ -52,3 +52,69 @@ r = requests.post('https://2a1f838fd36198aa414b5963af8abbf2.m.pipedream.net/', f
 print(r)
 '''
 
+'''
+r = requests.get('https://httpbin.org//image/jpeg')
+print(r.headers)
+with open('Agatha.jpg','wb') as fd:
+    for chunk in r.iter_content(chunk_size=500):
+        fd.write(chunk)
+'''
+
+'''
+r = requests.get('https://httpbin.org/status/501')
+try:
+    r.raise_for_status()
+except requests.exceptions.HTTPError:
+    print('ERROR! ERROR! ERROR!')
+print(r)
+'''
+'''
+try:
+    r = requests.get('https://grgrgrhtjtjtbnbmmrtmbl.com')
+except requests.exceptions.ConnectionError:
+    print('CONNECTION ERROR!')
+'''
+'''
+try:    
+    r = requests.get('https://httpbin.org', timeout=0.001)
+except requests.exceptions.ConnectTimeout:
+    print('CONNECTION TIMEOUT!')
+'''
+'''
+try:    
+    r = requests.get('https://httpbin.org/delay/10', timeout=5)
+except requests.exceptions.ReadTimeout:
+    print('READ TIMEOUT!')
+'''
+'''
+from requests.auth import HTTPBasicAuth
+r = requests.get('https://httpbin.org/basic-auth/Jimmy/Jjmiwm18!', auth=HTTPBasicAuth('Jimmy','Jjmiwm18!'))
+print(r)
+'''
+
+base_url = 'https://imdb-api.com/API/AdvancedSearch/k_nqlyktnc/?genres=action,adventure'
+
+payload = {}
+
+headers = {}
+
+r = requests.request("GET", base_url, headers=headers, data = payload)
+# print(r.text)
+print(r.json())
+# json_data = {'searchType':{'Movie'},'expression':{'inception 2010'}}
+# print(json_data)
+# json_data = r.json()
+# print (json_data['results'][4])
+
+
+
+
+
+
+
+
+
+
+
+
+
