@@ -92,19 +92,16 @@ r = requests.get('https://httpbin.org/basic-auth/Jimmy/Jjmiwm18!', auth=HTTPBasi
 print(r)
 '''
 
-base_url = 'https://imdb-api.com/API/AdvancedSearch/k_nqlyktnc/?genres=action,adventure'
+url = 'https://imdb-api.com/API/SearchSeries/k_nqlyktnc/fringe'
 
 payload = {}
 
 headers = {}
 
-r = requests.request("GET", base_url, headers=headers, data = payload)
+r = requests.request("GET", url, headers=headers, data = payload)
 # print(r.text)
 print(r.json())
-# json_data = {'searchType':{'Movie'},'expression':{'inception 2010'}}
-# print(json_data)
-# json_data = r.json()
-# print (json_data['results'][4])
+
 
 
 
