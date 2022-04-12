@@ -92,7 +92,7 @@ r = requests.get('https://httpbin.org/basic-auth/Jimmy/Jjmiwm18!', auth=HTTPBasi
 print(r)
 '''
 
-url = 'https://imdb-api.com/API/SearchSeries/k_nqlyktnc/fringe'
+url = 'https://imdb-api.com/API/SearchAll/k_nqlyktnc/fringe'
 
 payload = {}
 
@@ -100,7 +100,11 @@ headers = {}
 
 r = requests.request("GET", url, headers=headers, data = payload)
 # print(r.text)
-print(r.json())
+import json
+
+for i in  r.json()["results"]:
+    print(i)
+# print(json.dumps({"results" : r.json()["results"]}))
 
 
 
